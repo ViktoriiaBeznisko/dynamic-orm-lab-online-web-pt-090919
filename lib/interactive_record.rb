@@ -53,11 +53,7 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
   
-  def self.find_by(attr)
-    # column = attr.to_a.join(', ').split(', ')
-    sql = "SELECT * FROM #{self.table_name} WHERE #{column[0]} = '#{column[1]}'"
-    DB[:conn].execute(sql)
-    
+  def self.find_by(hash)
     # sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = '#{hash.values[0].to_s}'"
     # DB[:conn].execute(sql)
   end
